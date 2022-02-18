@@ -12,219 +12,178 @@
     <link rel="stylesheet" href="footer.css" />
   </head>
   <body>
-    <nav class="navbar">
-      <div class="nav">
-        <img  src="img/mart.png" class="brand-logo" alt="" />
-        <div class="nav-items">
-          <div class="search">
-            <input
-              type="text"
-              class="search-box"
-              placeholder="search brand, product"
-            />
-            <button class="search-btn">search</button>
+
+      <!-- navbar-->
+      <style>
+      .topnav {
+        overflow: hidden;
+        background-color: #ff2d53;
+      }
+      
+      .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      
+      .active {
+        background-color: #ff2d53;
+        color: white;
+      }
+      
+      .topnav .icon {
+        display: none;
+      }
+      
+      .dropdown {
+        float: right;
+        overflow: hidden;
+      }
+      
+      .dropdown .dropbtn {
+        float: left;
+        font-size: 17px;    
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+      
+      .topnav a:hover, .dropdown:hover .dropbtn {
+        background-color: rgb(19, 14, 14);
+        color: #ff2d53;
+      }
+      
+      .dropdown-content a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      
+      @media screen and (max-width: 600px) {
+        .topnav a:not(:first-child), .dropdown .dropbtn {
+          display: none;
+        }
+        .topnav a.icon {
+          float: right;
+          display: block;
+        }
+      }
+      
+      @media screen and (max-width: 600px) {
+        .topnav.responsive {position: relative;}
+        .topnav.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .topnav.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+        .topnav.responsive .dropdown {float: none;}
+        .topnav.responsive .dropdown-content {position: relative;}
+        .topnav.responsive .dropdown .dropbtn {
+          display: block;
+          width: 100%;
+          text-align: left;
+        }
+      }
+      </style>
+      
+      <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">HOMEMART</a>
+    
+        <div class="dropdown">
+          <button class="dropbtn">SHOP NOW
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="men.html">MEN</a>
+    <a href="women.html">WOMEN</a>
+    <a href="kid.html">KIDS</a>
+    <a href="beauty.html">BEAUTY</a>
+    <a href="accessories.html">ACCESSORIES</a>
           </div>
-          <a href="login.html"><img src="img/user.png" alt="" /></a>
-          <a href=""><img src="img/cart.png" alt="" /></a>
-        </div>
+          <a  href="login.html">LOGIN</a>
+        </div> 
+        
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
       </div>
-    </nav>
-    <nav class="navbar"></nav>
+      <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      </script>
+      
 
     <!-- hero section -->
-    <header class="hero-section">
-      <div class="content">
-        <img src="img/logo.png" class="logo" alt="" />
-        <p class="sub-heading">BEST FASHION COLLECTION OF ALL TIME</p>
-      </div>
-    </header>
+   <img src="img/banners.jpg" alt="">
     <section class="product">
-      <h2 class="product-category">BIGGEST DEALS ON TOP BRANDS</h2>
-    </section>
-
+     <h2 class="heading">EXPLORE TOP BRANDS</h2>
     <button id="cart-button" class="trigger cart-button-style"></button>
-
-    <div id="shop">
-      <div class="products ios apple" id="iphone-x">
-        <img class="product-image" src="topbrands/1.webp" />
+    <div class="grid-wrapper">
+      <div class="box zone"><img src="topbrands/1.webp"></div>
+      <div class="box zone"><img src="topbrands/2.webp"></div>
+      <div class="box zone"><img src="topbrands/3.webp"></div>
+      <div class="box zone"><img src="topbrands/4.webp"></div>
+      <div class="box zone"><img src="topbrands/5.webp"></div>
+      <div class="box zone"><img src="topbrands/6.webp"></div>
+      <div class="box zone"><img src="topbrands/7.jpg"></div>
+      <div class="box zone"><img src="topbrands/8.jpg"></div>
+      <div class="box zone"><img src="topbrands/9.webp"></div>
+      <div class="box zone"><img src="topbrands/10.webp"></div>
+      <div class="box zone"><img src="topbrands/11.webp"></div>
+      <div class="box zone"><img src="topbrands/12.webp"></div>
       </div>
-
-      <div class="products ios apple" id="iphone-x">
-        <img class="product-image" src="topbrands/2.webp" />
-      </div>
-
-      <div class="products ios apple" id="iphone-x">
-        <img class="product-image" src="topbrands//3.webp" />
-      </div>
-
-      <div class="products ios apple" id="iphone-x">
-        <img class="product-image" src="topbrands/4.webp" />
-      </div>
-
-      <div class="products ios apple" id="iphone-x">
-        <img class="product-image" src="topbrands/5.webp" />
-      </div>
-
-      <div class="products ios apple" id="iphone-x">
-        <img class="product-image" src="topbrands/6.webp" />
-      </div>
-
-      <div class="products ios apple" id="iphone-x">
-        <img class="product-image" src="topbrands/7.jpg" />
-      </div>
-
-      <div class="products ios apple" id="iphone-x">
-        <img class="product-image" src="topbrands/8.jpg" />
-      </div>
-
-      <div class="products ios apple" id="iphone-x">
-        <img class="product-image" src="topbrands/9.webp" />
-      </div>
-
-      <div class="products ios apple" id="iphone-x">
-        <img class="product-image" src="topbrands/10.webp" />
-        <br />
-        <br />
-      </div>
-
       <br />
-      <br />
-      <!--product carts-->
-      <div></div>
-      <section class="product1">
-        <h2 class="product-category1">EXPLORE TOP BRANDS</h2>
-      </section>
-    </div>
-
-    <!--carts-->
-    <div class="product-container">
-      <div class="product-card">
-        <div class="product-image">
-          <span class="discount-tag">30% off</span>
-          <img src="img/card1.png" class="product-thumb" alt="" />
-          <button class="card-btn "> add to whislist</button>
-          
-         
-        </div>
-        <div class="product-info">
-          <h2 class="product-brand">LARA</h2>
-          <p class="product-short-des">Gowns for special occasions</p>
-          <span class="price">Rs.799</span
-          ><span class="actual-price">Rs.1599</span>
-        </div>
-      </div>
-    </div>
-    <div class="product-container">
-      <div class="product-card">
-        <div class="product-image">
-          <span class="discount-tag">60% off</span>
-          <img src="img/card2.png" class="product-thumb" alt="" />
-          <button class="card-btn">Add to whislist</button>
-        </div>
-        <div class="product-info">
-          <h2 class="product-brand">HRX</h2>
-          <p class="product-short-des">India's first grown fitness brand</p>
-          <span class="price">Rs.499</span
-          ><span class="actual-price">Rs.1299</span>
-        </div>
-      </div>
-    </div>
-    <div class="product-container">
-      <div class="product-card">
-        <div class="product-image">
-          <span class="discount-tag">55% off</span>
-          <img src="img/card3.png" class="product-thumb" alt="" />
-          <button class="card-btn">add to whislist</button>
-        </div>
-        <div class="product-info">
-          <h2 class="product-brand">Puma</h2>
-          <p class="product-short-des">Top Brands Tracksuits</p>
-          <span class="price">Rs.1999</span
-          ><span class="actual-price">Rs.4999</span>
-        </div>
-      </div>
-    </div>
-    <div class="product-container">
-      <div class="product-card">
-        <div class="product-image">
-          <span class="discount-tag">60% off</span>
-          <img src="img/card4.png" class="product-thumb" alt="" />
-          <button class="card-btn">add to whislist</button>
-        </div>
-        <div class="product-info">
-          <h2 class="product-brand">WESTSIDE</h2>
-          <p class="product-short-des">Women's Solid Bodycon Western Dress</p>
-          <span class="price">Rs.3200</span
-          ><span class="actual-price">Rs.7999</span>
-        </div>
-      </div>
-    </div>
-    <div class="product-container">
-      <div class="product-card">
-        <div class="product-image">
-          <span class="discount-tag">10% off</span>
-          <img src="img/card5.png" class="product-thumb" alt="" />
-          <button class="card-btn" > add to whislist</button>
-        </div>
-        <div class="product-info">
-          <h2 class="product-brand">FARAH</h2>
-          <p class="product-short-des">Men Cotton Casual Shirt</p>
-          <span class="price">Rs.499</span
-          ><span class="actual-price">Rs599</span>
-        </div>
-      </div>
-    </div>
-    <div class="product-container">
-      <div class="product-card">
-        <div class="product-image">
-          <span class="discount-tag">20% off</span>
-          <img src="img/card6.png" class="product-thumb" alt="" />
-          <button class="card-btn">add to whislist</button>
-        </div>
-        <div class="product-info">
-          <h2 class="product-brand">farah</h2>
-          <p class="product-short-des">Men Black Cotton Casual Shirts</p>
-          <span class="price">Rs.399</span
-          ><span class="actual-price">Rs.699</span>
-        </div>
-      </div>
-    </div>
-    <div class="product-container">
-      <div class="product-card">
-        <div class="product-image">
-          <span class="discount-tag">40% off</span>
-          <img src="img/card7.png" class="product-thumb" alt="" />
-          <button class="card-btn">add to whislist</button>
-        </div>
-        <div class="product-info">
-          <h2 class="product-brand">iVOC</h2>
-          <p class="product-short-des">Men Fashion Shop Now</p>
-          <span class="price">Rs.499</span
-          ><span class="actual-price">Rs.999</span>
-        </div>
-      </div>
-    </div>
-    <div class="product-container">
-      <div class="product-card">
-        <div class="product-image">
-          <span class="discount-tag">80% off</span>
-          <img src="img/card8.png" class="product-thumb" alt="" />
-          <button class="card-btn">add to whislist</button>
-        </div>
-        <div class="product-info">
-          <h2 class="product-brand">Allen Solly</h2>
-          <p class="product-short-des">Allen Solly Cotton Shirt For Men</p>
-          <span class="price">Rs.899</span
-          ><span class="actual-price">Rs.1299</span>
-        </div>
-      </div>
-    </div>
-
-    <section class="product2">
       <div>
-        <h2 class="product-category2">APPARELS</h2>
-      </div>
-    </section>
+    <img  class="ban-pic" src="img/banner2.webp" alt="">
+    <h2 class="heading">DEALS OF THE DAY</h2>
+    <div class="grid-wrapper">
+      <div class="box zone"><img src="topbrands/d1.webp"></div>
+      <div class="box zone"><img src="topbrands/d2.webp"></div>
+      <div class="box zone"><img src="topbrands/d3.webp"></div>
+      <div class="box zone"><img src="topbrands/d4.webp"></div>
+      <div class="box zone"><img src="topbrands/d5.webp"></div>
+      <div class="box zone"><img src="topbrands/d6.webp"></div>
+  </div>  
+  <h2 class="heading">APPARELS</h2>
+    <section class="product2"></section>
     <!-- collections -->
     <section class="collection-container">
       <a href="women.html" class="collection">
@@ -244,13 +203,13 @@
     </section>
     <br>
     <footer>
+     
       <div class="footer-content">
-        <img src="img/logo.png" class="logo" alt="" />
+        
         <div class="footer-ul-container">
           <ul class="category">
             <li class="category-title">men</li>
             <li><a href="#" class="footer-link">t-shirts</a></li>
-            <li><a href="#" class="footer-link">sweatshirts</a></li>
             <li><a href="#" class="footer-link">shirts</a></li>
             <li><a href="#" class="footer-link">jeans</a></li>
             <li><a href="#" class="footer-link">trousers</a></li>
@@ -263,7 +222,30 @@
           <ul class="category">
             <li class="category-title">women</li>
             <li><a href="#" class="footer-link">t-shirts</a></li>
-            <li><a href="#" class="footer-link">sweatshirts</a></li>
+            <li><a href="#" class="footer-link">shirts</a></li>
+            <li><a href="#" class="footer-link">jeans</a></li>
+            <li><a href="#" class="footer-link">trousers</a></li>
+            <li><a href="#" class="footer-link">shoes</a></li>
+            <li><a href="#" class="footer-link">casuals</a></li>
+            <li><a href="#" class="footer-link">formals</a></li>
+            <li><a href="#" class="footer-link">sports</a></li>
+            <li><a href="#" class="footer-link">watch</a></li>
+          </ul>
+          <ul class="category">
+            <li class="category-title">kids</li>
+            <li><a href="#" class="footer-link">t-shirts</a></li>
+            <li><a href="#" class="footer-link">shirts</a></li>
+            <li><a href="#" class="footer-link">jeans</a></li>
+            <li><a href="#" class="footer-link">trousers</a></li>
+            <li><a href="#" class="footer-link">shoes</a></li>
+            <li><a href="#" class="footer-link">casuals</a></li>
+            <li><a href="#" class="footer-link">formals</a></li>
+            <li><a href="#" class="footer-link">sports</a></li>
+            <li><a href="#" class="footer-link">watch</a></li>
+          </ul>
+          <ul class="category">
+            <li class="category-title">Accessories</li>
+            <li><a href="#" class="footer-link">t-shirts</a></li>
             <li><a href="#" class="footer-link">shirts</a></li>
             <li><a href="#" class="footer-link">jeans</a></li>
             <li><a href="#" class="footer-link">trousers</a></li>
@@ -342,6 +324,6 @@
     </footer>
 
     <script src="js/home.js"></script>
-    <script src="js/nav.js"></script>
+    
   </body>
 </html>

@@ -13,22 +13,19 @@ footer{
     width: 100%;
     justify-content: space-between;
 }
-
-.footer-content .logo{
-    height: 160px;
+.fotter-content .logo-f {
+    height: 160px;   
 }
+    
 
 .footer-ul-container{
-    width: 45%;
     display: flex;
     justify-content: space-between;
 }
 
 .category{
     width: 200px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
+   padding: 10px;
     list-style: none;
 }
 
