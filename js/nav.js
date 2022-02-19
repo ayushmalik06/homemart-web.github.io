@@ -2,24 +2,23 @@ const createNav = () => {
     let nav = document.querySelector('.navbar');
 
     nav.innerHTML = `
-        <div class="nav">
-        <img src="img/logo.png" class="brand-logo" alt="">
-            <div class="nav-items">
-                <div class="search">
-                    <input type="text" class="search-box" placeholder="search brand, product">
-                    <button class="search-btn">search</button>
-                </div>
-                <a href="login.html"><img src="img/user.png" alt=""></a>
-                <a href="whislist.html"><img src="img/cart.png" alt=""></a>
-            </div>
-        </div>
-        <ul class="links-container">
-            <li class="link-item"><a href="men.html" class="link">MEN</a></li>
-            <li class="link-item"><a href="women.html" class="link">WOMEN</a></li>
-            <li class="link-item"><a href="kid.html" class="link">KIDS</a></li>
-            <li class="link-item"><a href="beauty.html" class="link">BEAUTY</a></li>
-            <li class="link-item"><a href="accessories.html" class="link">ACCESSORIES</a></li>
-        </ul>
+    <!-- 
+    navbar
+    -->
+    <div class="header">
+      <a href="#default" class="logo">HOMEMART</a>
+      <div class="header-right">
+        <a class="active" href="#home">Home</a>
+        <a href="men.html">MEN</a>
+        <a href="women.html">WOMEN</a>
+        <a href="kid.html">KIDS</a>
+        <a href="beauty.html">BEAUTY</a>
+        <a href="accessories.html">ACCESSORIES</a>
+        <a href="login.html">LOGIN</a>
+        
+      </div>
+    </div>
+        
     `;
 }
 

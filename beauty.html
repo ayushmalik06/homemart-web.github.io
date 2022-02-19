@@ -3,29 +3,154 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/nav-beauty.css">
-    <link rel="stylesheet" href="css/beauty.css">
+
+    <link rel="stylesheet" href="css/nav-women.css">
+    <link rel="stylesheet" href="css/women.css">
     <link rel="stylesheet" href="css/footer.css">
     <title>HOMEMART</title>
 </head>
 <body>
-    <div class="nav">
-        <img src="img/logo.png" class="brand-logo" alt="">
-            <div class="nav-items">
-                <div class="search">
-                    <input type="text" class="search-box" placeholder="search brand, product">
-                    <button class="search-btn" >search</button>
-                </div>
-                <a href="login.html"><img src="img/user.png" alt=""></a>
-            </div>
-          </div>
-        <ul class="links-container">
-            <li class="link-item"><a href="men.html" class="link">MEN</a></li>
-            <li class="link-item"><a href="women.html" class="link">WOMEN</a></li>
-            <li class="link-item"><a href="kid.html" class="link">KIDS</a></li>
-            <li class="link-item"><a href="beauty.html" class="link">BEAUTY</a></li>
-            <li class="link-item"><a href="accessories.html" class="link">ACCESSORIES</a></li>
-        </ul>
+      <!-- navbar-->
+      <style>
+        .topnav {
+          overflow: hidden;
+          background-color: #ff2d53;
+        }
+        
+        .topnav a {
+          float: left;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+        
+        .active {
+          background-color: #ff2d53;
+          color: white;
+        }
+        
+        .topnav .icon {
+          display: none;
+        }
+        
+        .dropdown {
+          float: right;
+          overflow: hidden;
+        }
+        
+        .dropdown .dropbtn {
+          float: left;
+          font-size: 17px;    
+          border: none;
+          outline: none;
+          color: white;
+          padding: 14px 16px;
+          background-color: inherit;
+          font-family: inherit;
+          margin: 0;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        .dropdown-content a {
+          float: none;
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+        
+        .topnav a:hover, .dropdown:hover .dropbtn {
+          background-color: rgb(19, 14, 14);
+          color: #ff2d53;
+        }
+        
+        .dropdown-content a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+        
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        
+        @media screen and (max-width: 600px) {
+          .topnav a:not(:first-child), .dropdown .dropbtn {
+            display: none;
+          }
+          .topnav a.icon {
+            float: right;
+            display: block;
+          }
+        }
+        
+        @media screen and (max-width: 600px) {
+          .topnav.responsive {position: relative;}
+          .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+          .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+          }
+          .topnav.responsive .dropdown {float: none;}
+          .topnav.responsive .dropdown-content {position: relative;}
+          .topnav.responsive .dropdown .dropbtn {
+            display: block;
+            width: 100%;
+            text-align: left;
+          }
+        }
+        </style>
+        
+        <div class="topnav" id="myTopnav">
+          <a href="index.html" class="active">HOMEMART</a>
+          <a  href="login.html">LOGIN</a>
+          <div class="dropdown">
+            <button class="dropbtn">SHOP NOW
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <br>
+            <br>
+            <a href="index.html">HOME</a>
+              <a href="men.html">MEN</a>
+      <a href="women.html">WOMEN</a>
+      <a href="kid.html">KIDS</a>
+      <a href="beauty.html">BEAUTY</a>
+      <a href="accessories.html">ACCESSORIES</a>
+              </div>
+             
+          </div> 
+          
+          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+        <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+        </script>
+        
+    
 
                <!--product carts--> 
 
@@ -34,73 +159,63 @@
        <div class="productcont">
               
           <div class="product">
-                   <h3 class="productname">JUST HERBS</h3>
-                   <img src="img/beauty1.jpg" alt="">
-                   <p>LIQUID LIPSTICKs...</p>
-                   <p class="price">$200</p>
-                   <p class="mrp">$800</p>
-                   <p class="dis">75% dis</p>
-                   <button class="addtocart">Add To Cart</button>
-               </div>
-          
-          <div class="product">
-                   <h3 class="productname">LAKME</h3>
-                   <img src="img/beauty2.jpg"alt="">
-                   <p> Matte lipstick plum ...</p>
-                   <p class="price">$455</p>
-                   <p class="mrp">$500</p>
-                   <p class="dis">9% dis</p>
-                   <button class="addtocart">Add To Cart</button>
-               </div>
-          
-          <div class="product">
-                   <h3 class="productname">MAYBELLINE</h3>
-                   <img src="img/beauty3.jpg" alt="">
-                   <p>04 easy berry lipstick...</p>
-                   <p class="price">$314</p>
-                    <p class="mrp">$350</p>
-                    <p class="dis">10% dis</p>
-                   
-                   <button class="addtocart">Add To Cart</button>
-               </div>
-               <div class="product">
-                   <h3 class="productname">CARA MIA</h3>
-                   <img src="img/beauty4.jpg" alt="">
-                   <p>Liquid lipsticks...</p>
-                   <p class="price">$179</p>
-                    <p class="mrp">$999</p>
-                    <p class="dis">74% dis</p>
-                   
-                   <button class="addtocart">Add To Cart</button>
-               </div>
-               <div class="product">
-                   <h3 class="productname">LAKME</h3>
-                   <img src="img/beauty5.jpg" alt="">
-                   <p>Primer matte lipstick...</p>
-                   <p class="price">$839</p>
-                    <p class="mrp">$1299</p>
-                    <p class="dis">72% dis</p>
-                   <button class="addtocart">Add To Cart</button>
-               </div>
-               <div class="product">
-                   <h3 class="productname">MORAZE</h3>
-                   <img src="img/beauty6.jpg" alt="">
-                   <p>Lipsticks for women...</p>
-                   <p class="price">$776</p>
-                    <p class="mrp">$1050</p>
-                    <p class="dis">56% dis</p>
-                   <button class="addtocart">Add To Cart</button>
-               </div>
-               <div class="product">
-                   <h3 class="productname">REVLON</h3>
-                   <img src="img/beauty7.jpg" alt="">
-                   <p>Super lipstick...</p>
+                   <h3 class="productname">LARA</h3>
+                   <img src="img/w1.jpg" alt="">
+                   <p>Flare Dress with Ruffles...</p>
                    <p class="price">$799</p>
-                    <p class="mrp">$1999</p>
-                    <p class="dis">60% dis</p>
+                   <p class="mrp">$1599</p>
+                   <p class="dis">40% dis</p>
                    <button class="addtocart">Add To Cart</button>
                </div>
-              
+          
+          <div class="product">
+                   <h3 class="productname">ANTHEAA</h3>
+                   <img src="img/w2.jpg "alt="">
+                   <p> Gowns For Womens...</p>
+                   <p class="price">$600</p>
+                   <p class="mrp">$1599</p>
+                   <p class="dis">30% dis</p>
+                   <button class="addtocart">Add To Cart</button>
+               </div>
+          
+          <div class="product">
+                   <h3 class="productname">PlusS</h3>
+                   <img src="img/w3.jpg" alt="">
+                   <p>Indian fashion trends...</p>
+                   <p class="price">$1999</p>
+                    <p class="mrp">$4999</p>
+                    <p class="dis">50% dis</p>
+                   
+                   <button class="addtocart">Add To Cart</button>
+               </div>
+               <div class="product">
+                   <h3 class="productname">WESTSIDE</h3>
+                   <img src="img/w4.jpg" alt="">
+                   <p>Women's bodycon western...</p>
+                   <p class="price">$3200</p>
+                    <p class="mrp">$6999</p>
+                    <p class="dis">65% dis</p>
+                   
+                   <button class="addtocart">Add To Cart</button>
+               </div>
+               <div class="product">
+                   <h3 class="productname">FABALLY</h3>
+                   <img src="img/w5.jpg" alt="">
+                   <p>Geogette midi dress...</p>
+                   <p class="price">$999</p>
+                    <p class="mrp">$1299</p>
+                    <p class="dis">80% dis</p>
+                   <button class="addtocart">Add To Cart</button>
+               </div>
+               <div class="product">
+                   <h3 class="productname">TOKYO TALKIES</h3>
+                   <img src="img/w6.jpg" alt="">
+                   <p>Men Black Cotton Shirts...</p>
+                   <p class="price">$899</p>
+                    <p class="mrp">$1599</p>
+                    <p class="dis">50% dis</p>
+                   <button class="addtocart">Add To Cart</button>
+               </div>
                </div>
                <div class="cart-container">
                 <h2>Cart</h2>
@@ -136,7 +251,7 @@
 
        <footer>
         <div class="footer-content">
-          <img src="img/logo.png" class="logo" alt="" />
+         
           <div class="footer-ul-container">
             <ul class="category">
               <li class="category-title">men</li>
@@ -155,6 +270,30 @@
               <li class="category-title">women</li>
               <li><a href="#" class="footer-link">t-shirts</a></li>
               <li><a href="#" class="footer-link">sweatshirts</a></li>
+              <li><a href="#" class="footer-link">shirts</a></li>
+              <li><a href="#" class="footer-link">jeans</a></li>
+              <li><a href="#" class="footer-link">trousers</a></li>
+              <li><a href="#" class="footer-link">shoes</a></li>
+              <li><a href="#" class="footer-link">casuals</a></li>
+              <li><a href="#" class="footer-link">formals</a></li>
+              <li><a href="#" class="footer-link">sports</a></li>
+              <li><a href="#" class="footer-link">watch</a></li>
+            </ul>
+            <ul class="category">
+              <li class="category-title">kids</li>
+              <li><a href="#" class="footer-link">t-shirts</a></li>
+              <li><a href="#" class="footer-link">shirts</a></li>
+              <li><a href="#" class="footer-link">jeans</a></li>
+              <li><a href="#" class="footer-link">trousers</a></li>
+              <li><a href="#" class="footer-link">shoes</a></li>
+              <li><a href="#" class="footer-link">casuals</a></li>
+              <li><a href="#" class="footer-link">formals</a></li>
+              <li><a href="#" class="footer-link">sports</a></li>
+              <li><a href="#" class="footer-link">watch</a></li>
+            </ul>
+            <ul class="category">
+              <li class="category-title">Accessories</li>
+              <li><a href="#" class="footer-link">t-shirts</a></li>
               <li><a href="#" class="footer-link">shirts</a></li>
               <li><a href="#" class="footer-link">jeans</a></li>
               <li><a href="#" class="footer-link">trousers</a></li>
