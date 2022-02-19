@@ -2,15 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 
 *{
-    box-sizing: border-box;
-    font-family:Acme;
-}
-body{
-    
-  font-family:'Quicksand', sans-serif;
-  text-align:center;
-  line-height:1.5em;
-/*   background:#E0E4CC; */
+  box-sizing: border-box;
+  font-family:Acme;
+overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 hr {
   border:none;
@@ -25,19 +19,22 @@ hr {
   border: #Ff2d53 solid 1px;
 }
 .container {
-  max-width: 100%; 
-  margin: 1em auto; 
-  background:#FFF; 
-  padding:5px;
-  border-radius:5px;
+  height: 10vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .productcont {
-  display: flex; 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+  
 }
-.product {
-  margin-left: 15px;
-  padding: 10px;  
-  border-radius:5px;
+.product{
+  padding: 30px;
+}
+.product  img{
+  width: 100%;
 }
 .cart-container {
   border:1px solid #E0E4CC;
@@ -49,7 +46,7 @@ button, input[type="submit"] {
     border:1px solid #Ff2d53; 
     color:#fff; 
     background: #ff2d53; 
-    padding:0.6em 1em;
+    padding:0.3em 1em;
     font-size:1em; 
     line-height:1; 
     
