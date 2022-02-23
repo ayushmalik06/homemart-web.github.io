@@ -1,30 +1,29 @@
 @import 'nav.css';
 @import 'footer.css';
-
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 
 *{
     box-sizing: border-box;
     font-family:Acme;
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
+
 img{
     width: 100%;
 background-size: cover;
 justify-content: center;
 }
 
-
 .hero-section .logo {
     height: 500px;
     display: block;
     margin: auto;
 }
+
 .heading{
     color: #FF2D53;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 2rem;
     border-radius: 2px;
     padding: 8px;
     margin: 8px;
@@ -41,9 +40,11 @@ justify-content: center;
     grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
     grid-gap: 20px;
 }
+
 .box > img {
     size: 100%;
 }
+
 .boxzone-two > img {
     size: 100%;
 }
@@ -73,11 +74,8 @@ justify-content: center;
     float: left;
     width: 20%;
     text-align: center;
-    padding: 0 0 1% 0;
-        
-    
+    padding: 0 0 1% 0;    
 }
-
 
 .products img {
     overflow-y: hidden;
@@ -89,10 +87,11 @@ justify-content: center;
 .brandstwo{
     padding-left: 30px;
 }
+
 .brandtwo h2{
     margin-left: 20px;
-
 }
+
 .collection-container{
     width: 100%;
     display: grid;
@@ -109,6 +108,7 @@ justify-content: center;
     height: 100%;
     object-fit: cover;
 }
+
 .collection p{
     position: absolute;
     top: 60%;
@@ -116,12 +116,12 @@ justify-content: center;
     transform: translate(-50%, -50%);
     text-align: center;
     color: #FF2D53;
-    font-size: 40px;
+    font-size: 5vw;
     font-style: bold;
     text-transform: capitalize;
-    text-decoration-line:overline;
-    
+    text-decoration-line:overline;    
 }
+
 .collection:nth-child(3){
     grid-column: span 2;
     margin-bottom: 10px;

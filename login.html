@@ -1,293 +1,224 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/login.css" />
-    <title>login/signup</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif
-}
-
-body {
-    background: #ecf0f3
-}
-
-.wrapper {
-    max-width: 350px;
-    min-height: 500px;
-    margin: 80px auto;
-    padding: 40px 30px 30px 30px;
-    background-color: #ecf0f3;
-    border-radius: 15px;
-    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff
-}
-
-.logo {
-    width: 80px;
-    margin: auto
-}
-
-.logo img {
-    width: 100%;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0px 0px 3px #5f5f5f, 0px 0px 0px 5px #ecf0f3, 8px 8px 15px #a7aaa7, -8px -8px 15px #fff
-}
-
-.wrapper .name {
-    font-weight: 600;
-    font-size: 1.4rem;
-    letter-spacing: 1.3px;
-    padding-left: 10px;
-    color: #555
-}
-
-.wrapper .form-field input {
-    width: 100%;
-    display: block;
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 1.2rem;
-    color: #666;
-    padding: 10px 15px 10px 10px
-}
-
-.wrapper .form-field {
-    padding-left: 10px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff
-}
-
-.wrapper .form-field .fas {
-    color: #555
-}
-
-.wrapper .btn {
-    box-shadow: none;
-    width: 100%;
-    height: 40px;
-    background-color: #ff2d48;
-    color: #fff;
-    border-radius: 25px;
-    box-shadow: 3px 3px 3px #b1b1b1, -3px -3px 3px #fff;
-    letter-spacing: 1.3px
-}
-
-.wrapper .btn:hover {
-    background-color: black;
-    color: wheat;
-}
-
-.wrapper a {
-    text-decoration: none;
-    font-size: 0.8rem;
-    color: #ff2d46
-}
-
-.wrapper a:hover {
-    color: black
-}
-
-@media(max-width: 380px) {
-    .wrapper {
-        margin: 30px 20px;
-        padding: 40px 15px 15px 15px
+    <base target="_top">
+    <script>
+      function AddRow()
+    {
+      var usernamee = document.getElementById("usernamee").value;
+      var passwordd = document.getElementById("passwordd").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      if (usernamee==""|| passwordd==""|| email==""|| phone=="") {
+        return false;
+      }
+      else {
+      google.script.run.AddRecord(usernamee,passwordd,email,phone);
+      document.getElementById("page2_id1").className = "page2_id1-off";
+      document.getElementById("page3_id1").className = "page3_id1";
+     }
     }
+
+     function LoginUser()
+    {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    google.script.run.withSuccessHandler(function(output) 
+    {
+      if(output == 'TRUE')
+      {
+         document.getElementById("displayusername").innerHTML = username;
+         document.getElementById("page1_id1").className = "page1_class1-off";
+         document.getElementById("page4_id1").className = "page4_id1";    
+      }
+      else if(output == 'FALSE')
+      {
+        document.getElementById("errorMessage").innerHTML = "Invalid data";     
+      }    
+    }).checkLogin(username, password);
+    }
+    
+function function1(){
+    document.getElementById("page1_id1").className = "page1_class1-off";
+    document.getElementById("page2_id1").className = "page2_id1";
 }
-  </style>
+ 
+function function3(){ 
+  document.getElementById("page3_id1").className = "page3_id1-off";
+  document.getElementById("page1_id1").className = "page1_id1"; 
+}
+
+  </script>
+  <style>
+
+/*page1*/
+.page1_class1-off{
+    display: none;
+  }
+
+
+/*page2*/
+.page2_class1{
+    display: none;
+  }
+
+.page2_id1-off{
+    display:none;
+}
+
+/*page3*/
+.page3_class1{
+    display:none;
+
+}
+.page3_id1-off{
+    display:none;
+}
+
+/*page4*/
+.page4_class1{
+    display:none;
+
+}
+.page4_id1-off{
+    display:none;
+}
+
+input[type=text]:hover{
+        border-bottom:2px solid black;
+      }
+input[type=number]:hover{
+        border-bottom:2px solid black;
+      }
+input[type=password]:hover{
+        border-bottom:2px solid black;
+      }
+
+.user{
+display: inline-block;
+width: 75px;
+height: 75px;
+border: 8px solid black;
+border-radius: 50%;
+position: relative;
+overflow: hidden;
+box-sizing: border-box;
+}
+
+/*the head/*/
+.user::before{
+content: '';
+display: inline-block;
+width: 24px;
+height: 24px;
+background: black;
+border-radius: 50%;
+position: absolute;
+left: calc(50% - 11px);
+top: 10px;
+}
+
+/*the body*/
+.user::after{
+content: '';
+display: inline-block;
+width:50px;
+height:40px;
+background: black;
+border-radius: 50%;
+position: absolute;
+left: calc(50% - 24px);
+top: 39px;
+}
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-      
-            <!-- navbar-->
-            <style>
-              .topnav {
-                overflow: hidden;
-                background-color: #ff2d53;
-              }
-              
-              .topnav a {
-                float: left;
-                display: block;
-                color: #f2f2f2;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                font-size: 17px;
-              }
-              
-              .active {
-                background-color: #ff2d53;
-                color: white;
-              }
-              
-              .topnav .icon {
-                display: none;
-              }
-              
-              .dropdown {
-                float: right;
-                overflow: hidden;
-              }
-              
-              .dropdown .dropbtn {
-                float: left;
-                font-size: 17px;    
-                border: none;
-                outline: none;
-                color: white;
-                padding: 14px 16px;
-                background-color: inherit;
-                font-family: inherit;
-                margin: 0;
-              }
-              
-              .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #f9f9f9;
-                min-width: 160px;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
-              }
-              
-              .dropdown-content a {
-                float: none;
-                color: black;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-                text-align: left;
-              }
-              
-              .topnav a:hover, .dropdown:hover .dropbtn {
-                background-color: rgb(19, 14, 14);
-                color: #ff2d53;
-              }
-              
-              .dropdown-content a:hover {
-                background-color: #ddd;
-                color: black;
-              }
-              
-              .dropdown:hover .dropdown-content {
-                display: block;
-              }
-              
-              @media screen and (max-width: 600px) {
-                .topnav a:not(:first-child), .dropdown .dropbtn {
-                  display: none;
-                }
-                .topnav a.icon {
-                  float: right;
-                  display: block;
-                }
-              }
-              
-              @media screen and (max-width: 600px) {
-                .topnav.responsive {position: relative;}
-                .topnav.responsive .icon {
-                  position: absolute;
-                  right: 0;
-                  top: 0;
-                }
-                .topnav.responsive a {
-                  float: none;
-                  display: block;
-                  text-align: left;
-                }
-                .topnav.responsive .dropdown {float: none;}
-                .topnav.responsive .dropdown-content {position: relative;}
-                .topnav.responsive .dropdown .dropbtn {
-                  display: block;
-                  width: 100%;
-                  text-align: left;
-                }
-              }
-              </style>
-              
-              <div class="topnav" id="myTopnav">
-                <a href="index.html" class="active">HOMEMART</a>
-                <a  href="login.html">LOGIN</a>
-                <div class="dropdown">
-                  <button class="dropbtn">SHOP NOW
-                    <i class="fa fa-caret-down"></i>
-                  </button>
-                  <div class="dropdown-content">
-                    <br>
-                  <br>
-                  <a href="index.html">HOME</a>
-                    <a href="men.html">MEN</a>
-            <a href="women.html">WOMEN</a>
-            <a href="kid.html">KIDS</a>
-            <a href="beauty.html">BEAUTY</a>
-            <a href="accessories.html">ACCESSORIES</a>
-                    </div>
-                   
-                </div> 
-                
-                <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-              </div>
-              <script>
-              function myFunction() {
-                var x = document.getElementById("myTopnav");
-                if (x.className === "topnav") {
-                  x.className += " responsive";
-                } else {
-                  x.className = "topnav";
-                }
-              }
-              </script>
-              
-          
+    <br><br>
+<!--page1-->
+<center>
+ <div class="page1_class1" id="page1_id1" style="background:none;border:2px solid gray;border-radius: 20px;width: 250px;padding-top: 10px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;"> 
+    <h1>Login Form</h1>
+    <br>
+    <input type="text" id="username" placeholder="Username" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;"/><br>
+    <br>
+    <input type="password" id="password" placeholder="Password" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;"/>
+    <br><span id="errorMessage" style="color: red" ></span><br>
+    <input type="submit" value="Login" onclick="LoginUser()"  style="float: right;padding-top: 1px;padding-bottom: 1px;padding-left: 10px;padding-right: 10px;font-size: 0.9em;font-weight:bold;" /><br>
+    <br>
+    <b>If you don't have an account,</b><input type="button" onClick="function1()" value="Create New" style="margin-top: 5px;font-weight:bold;" />
+ </div>
 
+<!--page2-->
+<div class="page2_class1" id="page2_id1" style="background:none;border:2px solid gray;border-radius: 20px;width: 250px;padding-top: 10px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;">
+ <h1>Create Account</h1>
+    <input type="text" id="usernamee" placeholder="Name" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;"/><br>
+    <br>
+    <input type="password" id="passwordd" placeholder="Create password" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size: 0.9;width: 50%;font-weight:bold;" /><br>
+        <br>
+    <input type="text" id="email" placeholder="Email" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;"/><br>
+    <br>
+    <input type="number" id="phone" placeholder="Phone no." style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;" /><br><br>
+    <b style="color:red;">Password must contain letters and numbers. It will not work without letters and numbers.</b><br><br>
+    <input type="submit" value="Create" onclick="AddRow()" style="float: right;padding-top: 1px;padding-bottom: 1px;padding-left: 10px;padding-right: 10px;font-size: 0.9em;font-weight:bold;" />
+    <br>
+</div>
 
-    <div class="wrapper">
-      <div class="logo"><img src="img/logo.png" alt="" /></div>
-      <br>
-      <div class="text-center mt-4 name">HOMEMART</div>
-      <form class="p-3 mt-3  method="post" autocomplete="off" name="google-sheet">
-        <div class="form-field d-flex align-items-center">
-          <span class="far fa-user"></span>
-          <input type="text" name="Name" class="form-control" placeholder="Username " value="" required=""/>
-        </div>
-        <div class="form-field d-flex align-items-center">
-          <span class="far fa-user"></span>
-          <input type="text" name="Email" class="form-control" placeholder="Email " value="" required=""/>
-        </div>
-        <div class="form-field d-flex align-items-center">
-          <span class="far fa-user"></span>
-          <input type="text" name="Password" class="form-control" placeholder="Password" value="" required=""/>
-        </div>
-       
-        <button class="btn mt-3 name="submit">Login</button>
-      </form>
-      <div class="text-center fs-6">
-        <a href="#">Forget password?</a> or <a href="#">Sign up</a>
-      </div>
-    </div>
-    <script src="js/home.js"></script>
-    <script src="js/nav.js"></script>
+<!--page3-->
+ <div class="page3_class1" id="page3_id1" style="background:none;border:2px solid gray;border-radius: 20px;width: 250px;padding-top: 10px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;"><center>
+    <h2> Your account has been successfully created. Login to your account</h2>
+    <input type="submit"  onClick="function3()" value="Login" style="font-weight:bold;"><br>
+ </div> 
+
+<!--page4-->
+<div class="page4_class1" id="page4_id1" style="background:none;border:2px solid gray;border-radius: 20px;width: 250px;padding-top: 10px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;" ><center>
+    <br>
+    <h2>Hi <b id="displayusername" style="color:red;"></b>!</h2>
+    <div class="user"></div>
+    <h2> You are successfully logged in.</h2>
+    <h2>**************</h2>
+    <br>
+  </div>
+</center>
+<script>
+  function doGet(e) {
+  var x = HtmlService.createTemplateFromFile("");
+  var y = x.evaluate();
+  var z = y.setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+  return z;
+}
+
+function checkLogin(username, password) {
+  var url = '';
+  var ss= SpreadsheetApp.openByUrl(url);
+  var webAppSheet = ss.getSheetByName("DATA");
+  var getLastRow =  webAppSheet.getLastRow();
+  var found_record = '';
+  for(var i = 1; i <= getLastRow; i++)
+  {
+   if(webAppSheet.getRange(i, 1).getValue().toUpperCase() == username.toUpperCase() && 
+     webAppSheet.getRange(i, 2).getValue().toUpperCase() == password.toUpperCase())
+   {
+     found_record = 'TRUE';
+   }    
+  }
+  if(found_record == '')
+  {
+    found_record = 'FALSE'; 
+  }
+  
+  return found_record;
+  
+}
+
+function AddRecord(usernamee, passwordd, email, phone) {
+  var url = '';
+  var ss= SpreadsheetApp.openByUrl(url);
+  var webAppSheet = ss.getSheetByName("DATA");
+  webAppSheet.appendRow([usernamee,passwordd,email,phone]);
+  
+}
+</script>
   </body>
 </html>
-
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwBKPuDXPDiOZQt1SvtZHdehvoDXd96WC10h9Qe78SIvJm456ug/exec'
-  const form = document.forms['google-sheet']
-
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => alert("Welcome To HOMEMART"))
-      .catch(error => console.error('Error!', error.message))
-  })
-</script>

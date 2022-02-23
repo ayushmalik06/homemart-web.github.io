@@ -4,157 +4,106 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
     <title>HOMEMART</title>
 <link rel="icon" href= "img/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-
-      <!-- navbar-->
-      <style>
-      .topnav {
-        overflow: hidden;
-        background-color: #ff2d53;
-      }
-      
-      .topnav a {
-        float: left;
-        display: block;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-      }
-      
-      .active {
-        background-color: #ff2d53;
-        color: white;
-      }
-      
-      .topnav .icon {
+   
+    <!--Navigation Bar-->
+   
+   <style>
+     *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    .topnav {
+      overflow: hidden;
+      background-color: #ff2d53;
+    }
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    .active {
+      background-color: black;
+      color: white;
+    }
+    .topnav .icon {
+      display: none;
+    }
+    .topnav a:hover, .dropdown:hover .dropbtn {
+      background-color: rgb(5, 4, 4);
+      color: #ff2d53;
+    }
+    .dropdown-content a:hover {
+      background-color: #ddd;
+      color: wheat;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .topnav .login{
+      float: right;
+      color: black;
+      font-weight: lighter;
+    }
+    @media screen and (max-width: 600px) {
+      .topnav a:not(:first-child), .dropdown .dropbtn {
         display: none;
       }
-      
-      .dropdown {
+      .topnav a.icon {
         float: right;
-        overflow: hidden;
+        display: block;
       }
-      
-      .dropdown .dropbtn {
-        float: left;
-        font-size: 17px;    
-        border: none;
-        outline: none;
-        color: white;
-        padding: 14px 16px;
-        background-color: inherit;
-        font-family: inherit;
-        margin: 0;
-      }
-      
-      .dropdown-content {
-        display: none;
+    }
+    @media screen and (max-width: 600px) {
+      .topnav.responsive {position: relative;}
+      .topnav.responsive .icon {
         position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
+        right: 0;
+        top: 0;
       }
-      
-      .dropdown-content a {
+      .topnav.responsive a {
         float: none;
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
         display: block;
         text-align: left;
       }
-      
-      .topnav a:hover, .dropdown:hover .dropbtn {
-        background-color: rgb(19, 14, 14);
-        color: #ff2d53;
-      }
-      
-      .dropdown-content a:hover {
-        background-color: #ddd;
-        color: black;
-      }
-      
-      .dropdown:hover .dropdown-content {
+      .topnav.responsive .dropdown {float: none;}
+      .topnav.responsive .dropdown-content {position: relative;}
+      .topnav.responsive .dropdown .dropbtn {
         display: block;
+        width: 100%;
+        text-align: left;
       }
-      
-      @media screen and (max-width: 600px) {
-        .topnav a:not(:first-child), .dropdown .dropbtn {
-          display: none;
-        }
-        .topnav a.icon {
-          float: right;
-          display: block;
-        }
-      }
-      
-      @media screen and (max-width: 600px) {
-        .topnav.responsive {position: relative;}
-        .topnav.responsive .icon {
-          position: absolute;
-          right: 0;
-          top: 0;
-        }
-        .topnav.responsive a {
-          float: none;
-          display: block;
-          text-align: left;
-        }
-        .topnav.responsive .dropdown {float: none;}
-        .topnav.responsive .dropdown-content {position: relative;}
-        .topnav.responsive .dropdown .dropbtn {
-          display: block;
-          width: 100%;
-          text-align: left;
-        }
-      }
-      </style>
-      
-      <div class="topnav" id="myTopnav">
-        <a href="index.html" class="active">HOMEMART</a>
-        <a  href="login.html">LOGIN</a>
-        <div class="dropdown">
-          <button class="dropbtn">SHOP NOW
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content">
-            <br>
-            <br>
-            <a href="index.html">HOME</a>
-            <a href="men.html">MEN</a>
-    <a href="women.html">WOMEN</a>
-    <a href="kid.html">KIDS</a>
-    <a href="beauty.html">BEAUTY</a>
-    <a href="accessories.html">ACCESSORIES</a>
-            </div>
-           
-        </div> 
-        
-        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-      </div>
-      <script>
-      function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
-      </script>
-      
+    }
+    </style>
 
-    <!-- hero section -->
+    <div class="topnav" id="myTopnav">
+      <a href="index.html" class="active">HOMEMART</a>
+      <a href="men.html">MEN</a>
+      <a href="women.html">WOMEN</a>
+      <a href="kid.html">KIDS</a>
+      <a href="beauty.html">BEAUTY</a>
+      <a href="accessories.html">ACCESSORIES</a>
+        <a class="login" href="login.html">LOGIN</a>
+      <div class="dropdown">
+      </div> 
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+   
+
+<!-- EXPLORE TOP BRANDS  -->
    <img src="img/banners.jpg" alt="">
     <section class="product">
      <h2 class="heading">EXPLORE TOP BRANDS</h2>
@@ -177,11 +126,9 @@
       <div>
         <h2 class="heading">DEALS OF THE DAY</h2>
     <img  class="ban-pic" src="img/banner2.webp" alt="">
- 
-    
   <h2 class="heading">APPARELS</h2>
     <section class="product2"></section>
-    <!-- collections -->
+
     <section class="collection-container">
       <a href="women.html" class="collection">
         <img src="img/women1.jpg" alt="" />
@@ -201,9 +148,7 @@
     <br>
     <img src="img/adi.jpg" alt="">
     <footer>
-     
       <div class="footer-content">
-        
         <div class="footer-ul-container">
           <ul class="category">
             <li class="category-title">men</li>
@@ -255,9 +200,7 @@
           </ul>
         </div>
       </div>
-
-      <p class="footer-title">about company</p>
-      <br>
+      <p class="footer-title">ABOUT COMPANY</p>
       <p class="info">
         Makeup Dresses For Girls T-Shirts Sandals Headphones Babydolls Blazers
         For Men Handbags Ladies Watches Bags Sport Shoes Reebok Shoes Puma Shoes
@@ -271,7 +214,6 @@
             BEST ONLINE SHOPPING SITE IN INDIA FOR FASHION
         </p>
       </p>
-<br>
       <ol class="info2">
           <li>
             Smart men’s clothing - At Homemart you will find myriad options in smart formal shirts and trousers, cool T-shirts and jeans, or kurta and pyjama combinations for men. Wear your attitude with printed T-shirts. Create the back-to-campus vibe with varsity T-shirts and distressed jeans. Be it gingham, buffalo, or window-pane style, checked shirts are unbeatably smart. Team them up with chinos, cuffed jeans or cropped trousers for a smart casual look. Opt for a stylish layered look with biker jackets. Head out in cloudy weather with courage in water-resistant jackets. Browse through our innerwear section to find supportive garments which would keep you confident in any outfit.
@@ -309,19 +251,26 @@
       <p class="info">telephone - 180 00 00 001, 180 00 00 002</p>
       <div class="footer-social-container">
         <div>
-          <a href="#" class="social-link">terms & services</a>
-          <a href="#" class="social-link">privacy page</a>
+          <a href="#" class="atag" > FAQ</a>
+          <a href="#" class="atag" > Teams Of Use</a>
+          <a href="https://github.com/ayushmalik06" class="fa fa-github"></a>
+          <a href="https://www.instagram.com/_ayushmalik/" class="fa fa-instagram"></a>
+          <a href="https://www.linkedin.com/in/ayushmaan-malik-ab7926216" class="fa fa-linkedin"></a>
+          <a href="https://twitter.com/AyushMa83991715?t=-84iHpCvYbwFvVQBtESxUQ&s=09" class="fa fa-twitter"></a>
         </div>
-        <div>
-          <a href="#" class="social-link">instagram</a>
-          <a href="#" class="social-link">facebook</a>
-          <a href="#" class="social-link">twitter</a>
-        </div>
-      </div>
       <p class="footer-credit">HomeMart, Best apparels online store</p>
     </footer>
-
-    <script src="js/home.js"></script>
-    
   </body>
 </html>
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  </script>
+<script src="js/home.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

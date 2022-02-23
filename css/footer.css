@@ -1,5 +1,3 @@
-
-
 footer{
     position: relative;
     width: 100%;
@@ -13,18 +11,18 @@ footer{
     width: 100%;
     justify-content: space-between;
 }
+
 .fotter-content .logo-f {
     height: 160px;   
 }
     
-
 .footer-ul-container{
     display: flex;
     justify-content: space-between;
 }
 
 .category{
-    width: 200px;
+    width: 150px;
    padding: 10px;
     list-style: none;
 }
@@ -33,14 +31,18 @@ footer{
     grid-column: span 2;
     text-transform: capitalize;
     color: #fff;
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 15px;
+    margin-bottom: 30px;
 }
 
 .category .footer-link{
     text-decoration: none;
     text-transform: capitalize;
     color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-link{
+    font-size: 14px;
 }
 
 .footer-link:hover{
@@ -50,22 +52,21 @@ footer{
 
 .footer-title, .info{
     color: rgba(255, 255, 255, 0.75);
-    
     text-transform: capitalize;
 }
 
 .footer-title{
-    margin-top: 80px;
+    margin-top: 30px;
     color: #fff;
 }
+
 .footer-title2, .info2{
-    color: rgba(255, 255, 255, 0.75);
-    
+    color: rgba(255, 255, 255, 0.75);    
     text-transform: capitalize;
 }
 
 .footer-title2{
-    margin-top: 80px;
+    margin-top: 30px;
     color: #fff;
 }
 
@@ -81,9 +82,7 @@ footer{
     text-transform: capitalize;
 }
 
-.social-link:nth-child(1){
-    margin-left: 0;
-}
+
 
 .footer-credit{
     width: 100%;
@@ -95,3 +94,40 @@ footer{
     color: #fff;
     background: rgba(0, 0, 0, 0.2);
 }
+
+.atag{
+    margin: 8px;
+    float:left;
+    color: white;
+    text-align: left;
+    padding: 10px 5px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.fa {
+    padding: 20px;
+    width: 50px;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+      opacity: 1;
+      color: black;
+      transition:  2s ease;
+}
+
+.fa-twitter {
+ color: white;
+}
+.fa-github {
+ color: white;
+}
+.fa-linkedin {
+   color: white;
+}
+.fa-instagram {  
+    color: white;
+}
+  
